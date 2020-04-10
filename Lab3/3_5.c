@@ -1,39 +1,26 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-#define n 7
-
-void citire(int v[])
-{
-	int i;
-	for (i = 0; i < n; i++)
-	{
-		printf("v[%d]= ", i);
-		scanf("%d", v + i);
-	}
-}
-
-void afisare(int v[])
+void afisare(int v[],int n)
 {
 	int i;
 	for (i = 0; i < n; i++)
 		printf("%d ", *(v + i));
+		printf("\n");
 }
 
-void minim(int v[])
+void minim(int v[],int n)
 {
-	int i, min = v;
+	int i, min = *(v+0);
 	for (i = 0; i < n; i++)
 		if (*(v + i) < min) min = *(v + i);
 	for (i = 0; i < n; i++)
-		if (*(v + i) == min) printf("Minimul este: %d", *(v + i));
+		if (*(v + i) == min) printf("Minimul este: %d\n", *(v + i));
 }
 
 int main()
 {
-	int v[10];
-	citire(v);
-	afisare(v);
-	minim(v);
+	int v[]={7,-5,4,3,-9,2,8},n=7;
+	afisare(v,n);
+	minim(v,n);
 	return 0;
 }

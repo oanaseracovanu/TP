@@ -1,37 +1,25 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-#define n 7
-
-void citire(int v[])
+void afisare(int v[], int n)
 {
-	int i;
-	for(i=0;i<n;i++)
-	{
-		printf("v[%d]= ", i);
-		scanf("%d", v + i);
-	}
+    int i;
+    for(i=0;i<n;i++)
+    printf("%d ",*(v+i));
+    printf("\n");
 }
 
-void afisare(int v[])
-{
-	int i;
-	for (i = 0; i < n; i++)
-		printf("%d ", *(v + i));
-}
-
-void negative(int v[])
+void negative(int v[],int n)
 {
 	int i,nr=0;
-	for (i = 0; i < n; i++)
-		if (*(v + i) < 0) nr = nr + 1;
-	printf("In vector sunt %d numere negative", nr);
+    for(i=0;i<n;i++)
+    if(*(v+i)<0) nr=nr+1;
+	printf("In vector sunt %d numere negative\n", nr);
 }
+
 int main()
 {
-	int v[10];
-	citire(v);
-	afisare(v);
-	negative(v);
+	int v[]={7,-5,4,3,-9,2,8},n=7;
+	afisare(v,n);
+	negative(v,n);
 	return 0;
 }

@@ -1,6 +1,5 @@
 #include<stdio.h>
 
-
 typedef struct					
 {
 	char marca[20];
@@ -13,7 +12,8 @@ typedef struct
 		int put;
 	}date;					
 }automobil;						
-typedef automobil masini[20];			
+typedef automobil masini[20];	
+
 void citire(masini a, int *n)			
 {
 	int i;
@@ -37,7 +37,7 @@ void citire(masini a, int *n)
 	}
 }
  
-void afisare(masini a,int n)			//afisare date
+void afisare(masini a,int n)			
 {
 	int i;
 	 for (i=0;i<n;i++)
