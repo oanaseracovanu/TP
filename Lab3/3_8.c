@@ -3,16 +3,31 @@
 
 int main()
 {
-    int v[]={7, -5, 4, 3, -9, 2, -8},n=7,i;
-    printf ("Vectorul cu negativul inaintea fiecarui element original: \n");
+    int v[14],n=7,i,aux[7],aux2[14],j;
+
     for(i=0;i<n;i++)
     {
-        if(*(v+i)>=0)
-        printf("-%d %d ",v[i],v[i]);
-       else
-        {
-        *(v+i)=sqrt(*(v+i)**(v+i));
-        printf("%d -%d ",*(v+i),*(v+i));
-        }
+        printf("v[%d]: ",i);
+        scanf("%d",v+i);
     }
+
+    for(i=0;i<n;i++)
+    *(aux+i)=*(v+i);
+
+    for(i=0;i<n;i++)
+    *(aux2+i)=-(*(aux+i));
+
+    j=0;
+    for(i=0;i<2*n;i=i+2)
+    {
+    *(v+i)=*(aux2+j);
+    *(v+i+1)=*(aux+j);
+        j++;
+    }
+
+    for(i=0;i<2*n;i++)
+    printf("%d ",*(v+i));
+    printf("\n");
+
+    return 0;
 }
