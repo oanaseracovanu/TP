@@ -44,28 +44,24 @@ void afisare_matrice(int n,int m,float a[][10])
 }
 void cautare_elem_comune(int n, int m, int k,float v[], float a[][10])
 {
-    int i,j,p=0,ok;
+    int i,j,p,nr;
     for(i=0; i<n; i++)
     {
         for(j=0; j<m; j++)
         {
-            ok=1;
-            if(v[p]==a[i][j]) {
-            p++;
-            ok=1;
-            }
-            else
+            nr=0;
+            for(p=0;p<k;p++)
             {
-                ok=0;
-                p=0;
+                if(v[p]==a[i][j])
+                {
+                    ++nr;
+                    if(nr) printf("Perechile sunt:v[%d], a[%d][%d]\n",p, i, j);
+                }
             }
-            
-            if(p==k) {printf("am gasit vector pe linia %d",i); break;}
-
         }
-
     }
-    if(p!=k && ok==0) printf("Nu exista elemente comune\n");
+    if(nr==0)
+        printf("Nu exista elemente comune\n");
 }
 
 int main()
