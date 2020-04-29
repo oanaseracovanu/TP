@@ -20,7 +20,7 @@ void minim(int n, int v[][10])
 	for (i = 0; i < n; i++)
 		for(j=0;j<n;j++)
 	{
-		if (v[i][j] == 0) break;
+		if (v[i][j] == 0) continue;
 		if (v[i][j] < min) min = v[i][j];
 	}
 
