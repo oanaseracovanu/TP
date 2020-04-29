@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
 void citire(int n, int v[])
@@ -25,12 +24,12 @@ void sortare(int n, int v[])
 		do
 		{
 			k = 1;
-			for (i = 0; i < n; i++)
-			if (*(v + i) < *(v + i+1))
+			for (i = 1; i <n; i++)
+			if (*(v + i) < *(v + i-1))
 			{
 				aux = *(v + i);
-				*(v + i) = *(v + i+1);
-				*(v + i + 1) = aux;
+				*(v + i) = *(v + i-1);
+				*(v + i-1 ) = aux;
 				k = 0;
 			}
 

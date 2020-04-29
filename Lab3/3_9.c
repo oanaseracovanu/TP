@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
 void citire(int n, int* v)
@@ -24,7 +23,7 @@ void duplicate(int n, int* v)
 	for (i = 0; i < n; i++)
 	{
 		k = 0;
-		for (j = i; j < n; j++)
+		for (j = 0; j < n; j++)
 			if (*(v + i) == *(v + j)) k = k + 1;
 			if (k > 1) printf("Elementul %d are duplicat \n", *(v+i));
 	}

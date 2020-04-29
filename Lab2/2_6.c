@@ -1,15 +1,14 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-#define col 4
-#define lin 4
+#define col 3
+#define lin 3
 #define linia 2
 
 void citire(int a[][col])
 {
 	int i, j;
-	for(i=0;i<lin;i++)
-		for (j = 0; j < col; j++)
+	for(i=1;i<=lin;i++)
+		for (j = 1; j <= col; j++)
 		{
 			printf("a[%d][%d]= ",i,j);
 			scanf("%d", &a[i][j]);
@@ -19,9 +18,9 @@ void citire(int a[][col])
 void afisare(int a[][col])
 {
 	int i, j;
-	for (i = 0; i < lin+1; i++)
+	for (i = 1; i <= lin+1; i++)
 	{
-		for (j = 0; j < col; j++)
+		for (j = 1; j <= col; j++)
 			printf("%d ", a[i][j]);
 		printf("\n");
 	}
@@ -30,8 +29,8 @@ void afisare(int a[][col])
 void adaugare(int a[][col])
 {
 	int i, j;
-	for(i=lin+1;i>0;i--)
-		for (j = 0; j < col; j++)
+	for(i=lin+1;i>=1;i--)
+		for (j = 1; j <= col; j++)
 		{
 			if (i== linia)
 			a[i+1][j] =0;

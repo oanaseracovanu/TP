@@ -42,27 +42,30 @@ void afisare_matrice(int n,int m,float a[][10])
         printf("\n");
     }
 }
-
 void cautare_elem_comune(int n, int m, int k,float v[], float a[][10])
 {
-    int i,j,p,nr=0;
+    int i,j,p=0,ok;
     for(i=0; i<n; i++)
     {
         for(j=0; j<m; j++)
         {
-            for(p=0;p<k;p++)
-            {
-                if(v[p]==a[i][j])
-                {
-                    ++nr;
-                    printf("Perechile sunt:[%d][%d]\n", i, j);
-                }
+            ok=1;
+            if(v[p]==a[i][j]) {
+            p++;
+            ok=1;
             }
+            else
+            {
+                ok=0;
+                p=0;
+            }
+            
+            if(p==k) {printf("am gasit vector pe linia %d",i); break;}
+
         }
 
     }
-    if(nr==0)
-        printf("Nu exista elemente comune\n");
+    if(p!=k && ok==0) printf("Nu exista elemente comune\n");
 }
 
 int main()
@@ -70,12 +73,12 @@ int main()
     float v[10], a[10][10];
     int n,m,k;
     printf("Dimensiune vectori: ");
-    scanf("%d",&n);
-    printf("Nr linii matrice: ");
-    scanf("%d",&m);
-    printf("Nr coloane matrice: ");
     scanf("%d",&k);
-    citire_vector(v,n);
+    printf("Nr linii matrice: ");
+    scanf("%d",&n);
+    printf("Nr coloane matrice: ");
+    scanf("%d",&m);
+    citire_vector(v,k);
     citire_matrice(n,m,a);
     afisare_vector(v,k);
     afisare_matrice(n,m,a);

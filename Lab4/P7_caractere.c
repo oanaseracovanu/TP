@@ -21,7 +21,7 @@ int main()
         j=0;
         for(k=0;k<strlen(sir[i]);k++)
         {
-        if(strchr("+-0123456789",sir[k]==0)) 
+        if(strchr("+-0123456789",sir[k])==0)
             j=1; 
         }
         if(j==1)
