@@ -1,0 +1,7 @@
+popescu ion 5.5
+popa ioana 6.7
+popescu vasile 7.9
+ionescu adam 10
+popa alexandru 9
+popescu avram 5
+popescu andreea 4.2
