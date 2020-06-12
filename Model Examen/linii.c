@@ -6,7 +6,7 @@
 #include<string.h>
 
 char **linii=NULL;
-char nr=0;
+int nr=0;
 
 char* citire()
 {
