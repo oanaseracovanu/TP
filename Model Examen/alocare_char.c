@@ -34,8 +34,6 @@ int main()
     int *n;
     sir=alocare_char();
     printf("%s\n ",sir);
-    *n=alocare_vector();
-    afisare_vector(*n);
     return 0;
 
 }
